@@ -1,0 +1,12 @@
+```exec
+user=app
+su - $user /etc/init.d/self_deploy.sh
+```
+
+```self_deploy.sh
+app_path=/var/www/bitstock/current
+rails_env=staging
+
+cd $app_path
+RAILS_ENV=$rails_env bundle exec cap local_$rails_env deploy
+```
