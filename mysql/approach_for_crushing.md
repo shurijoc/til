@@ -16,3 +16,5 @@ mysql.server startが動かなくなったとき
   - `brew uninstall mysql@5.7`
   - `brew install mysql@5.7`
   - `vim ~/.bash_profile` でpath修正
+- bundle/configの編集
+  - `BUNDLE_BUILD__MYSQL2: "--with-mysql-config=/usr/local/opt/mysql@5.6/bin/mysql_config --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"`
