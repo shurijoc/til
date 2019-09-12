@@ -1,0 +1,1 @@
+after_actionの中でrenderを使うことはできない
