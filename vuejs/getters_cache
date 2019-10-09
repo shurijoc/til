@@ -1,0 +1,21 @@
+getterにはプロパティスタイルアクセスとメソッドスタイルアクセスの2つがある。
+プロパティスタイルアクセス -> cacheが効く。引数は渡せない
+メソッドスタイルアクセス -> cacheが効かない。引数を渡せる
+
+```
+// property style access
+const navBack = (state) => {
+  return state.navBack
+};
+
+// method style access
+const searchTagValues = (state) => () => {
+  if(state.searchTags.length === 0) { return [] }
+
+  let array_values = new Array();
+  for (let key in state.searchTags) {
+    array_values.push(state.searchTags[key]);
+  }
+  return array_values.flat();
+};
+```
