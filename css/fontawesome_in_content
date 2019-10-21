@@ -1,0 +1,14 @@
+cssのcontentでfontawesomeを使うときは `font-weight` と `font-family` にも注意する
+
+```
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+
+.main-header {
+  .sidebar-toggle {
+    &:before {
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+    }
+  }
+}
+```
