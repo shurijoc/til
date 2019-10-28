@@ -18,3 +18,7 @@ mysql.server startが動かなくなったとき
   - `vim ~/.bash_profile` でpath修正
 - bundle/configの編集
   - `BUNDLE_BUILD__MYSQL2: "--with-mysql-config=/usr/local/opt/mysql@5.6/bin/mysql_config --with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"`
+
+## skip-grant-tablesについて
+mysql@5.7で `MySQL5.7でtable performance_schema.session_variables doesn't exist` てきなerrorが出たら `skip-grant-tables` か `innode_force_recovery=4` が原因の可能性があるのでそれらをコメントアウトして再インストールすると良いかもしれない
+[mysql][client]に書いてあるconfigもコメントアウトした
