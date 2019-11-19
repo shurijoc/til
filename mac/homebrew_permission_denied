@@ -1,0 +1,3 @@
+brewでpermission deniedになったら
+
+`sudo chown -R $(whoami) $(brew --prefix)/*` を走らせる
