@@ -1,0 +1,4 @@
+`import UIKit` によって UIButtonなどが使えるようになる。
+各classにはpropertyがある。UIButton.labelなど
+
+`変数名: クラス名`という書き方になる。例えば `headerImage: UIImageView`
