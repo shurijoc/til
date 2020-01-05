@@ -7,4 +7,18 @@
 ```
 
 ▼ パラメータ付き遷移
-`performSegue(withIdentifier: "next", sender: nil)`
+
+ViewControllerのUI上部にあるメニューの一番左のアイコンをctrl + クリックアンドドラッグで遷移先につなげる必要がある
+
+
+```
+// 遷移元
+@IBAction func someAction() {
+  performSegue(withIdentifier: "next", sender: nil)
+}
+
+override func prepare(for segue: ......) {
+  let nextVC = segue.destination as! NextViewController
+  
+  nextVC.count2 = count
+}
