@@ -14,3 +14,11 @@ autolayoutを常に使う
 
 #### addSubview
 storyboard(xib)に設置している時点でaddSubviewはしてあるのでこれは不要だね！
+
+#### キャストのタイミング
+基本的には初期化するとき以外はいらない。↓は不要
+
+```
+let request = URLRequest(url: url)
+webView.load(request as URLRequest)
+```
