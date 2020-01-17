@@ -7,3 +7,12 @@ if let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCel
 } else {
     return UITableViewCell()
 }
+```
+
+下記のようにも書ける
+
+```
+if let url = URL(string: "https://github.com") {
+  print url
+}
+```
