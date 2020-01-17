@@ -7,3 +7,7 @@ guard
     ((try? Data(contentsOf: url)) != nil)
     else { return }
 ```
+
+```
+guard let url = URL(string: originalUrl) else { fatalError("Invalid url \(originalUrl)") }
+```
