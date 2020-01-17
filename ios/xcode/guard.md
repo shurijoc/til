@@ -8,6 +8,8 @@ guard
     else { return }
 ```
 
+unwrapもできる
+
 ```
 guard let url = URL(string: originalUrl) else { fatalError("Invalid url \(originalUrl)") }
 ```
