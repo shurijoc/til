@@ -1,0 +1,34 @@
+I don't know if there's a better solution, but you could force the re-mount of the button when you need the click.once to be enabled again.
+
+To achieve it just give a key to the button component and increment it for re-mounting.
+
+Here's a simple example:
+
+```
+new Vue({
+  el: "#app",
+  data: {
+    buttonKey: 1
+  },
+  methods: {
+    clickOnceEvent() {
+      alert('click.once!')    
+    },
+    enableClickOnce() {
+      this.buttonKey++
+    }
+  }
+})
+```
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<div id="app">
+  <button @click.once="clickOnceEvent" :key="buttonKey">
+  Click Once Button
+  </button>
+  <button @click="enableClickOnce">
+  Re-enable Click Once
+  </button>
+</div>
+```
