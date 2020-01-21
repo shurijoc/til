@@ -1,0 +1,11 @@
+`import UIKit` によって UIButtonなどが使えるようになる。
+各classにはpropertyがある。UIButton.labelなど
+
+`変数名: クラス名`という書き方で型指定後に使える。
+
+例えば
+```
+@IBOutlet private weak var headerButton: UIButton
+
+headerButton.label = 'ボタンのテキスト'
+```
