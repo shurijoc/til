@@ -2,3 +2,4 @@
 2. xib = ジブ
 3. xcode右上の `+` ボタンからUIコンポーネントなどを使用できる
 4. autolayoutをつけないと、iphoneのバージョン違いによるディスプレイの大きさの差を吸収できない。autolayoutはstoryboard/xibを開いて右下にあるボタンから設定できる。そうするとxcode右端のHorizontal/Verticalに値が追加される
+5. Cmd + Shift + O で クイックファイルサーチが使える
