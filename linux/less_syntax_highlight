@@ -1,0 +1,16 @@
+lessの内容にsyntaxをつける方法
+
+```linux
+sudo yum install source-highlight
+```
+
+```shell rc
+alias hilite='/usr/bin/src-hilite-lesspipe.sh'
+alias less='less -R'
+```
+
+使い方
+
+```
+hilite | grep less
+```
