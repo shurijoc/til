@@ -1,4 +1,5 @@
-```routing.sh
+routing.sh
+```sh
 aws elbv2 create-rule \
   --listener-arn arn:aws:elasticloadbalancing:ap-northeast-1:759105656194:listener/app/runteq3-staging/3ed8e7269b94d9f8/9fb1a08f36fd02f0 \
   --priority 10 \
@@ -6,7 +7,8 @@ aws elbv2 create-rule \
   --actions file://rule-actions.json
 ```
 
-```rule-conditions.json
+rule-conditions.json
+```json
 [
   {
     "Field": "path-pattern",
@@ -23,7 +25,8 @@ aws elbv2 create-rule \
 ]
 ```
 
-```rule-actions.json
+rule-actions.json
+```json
 [
     {
         "Type": "fixed-response",
