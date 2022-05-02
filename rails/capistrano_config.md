@@ -1,7 +1,11 @@
 fetch(:aaaa)を `set` 内で使用するときはlambdaを使用して遅延評価させる
+
 NG
+
 `set :puma_conf, "#{release_path}/config/puma/#{rails_env}.rb"`
+
 OK
+
 `set :puma_conf, -> { "#{release_path}/config/puma/#{rails_env}.rb" }`
 
 
