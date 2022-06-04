@@ -1,0 +1,5 @@
+```
+$ serverless deploy
+
+$ serverless remove
+```
