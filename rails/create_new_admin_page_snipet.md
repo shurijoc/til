@@ -15,8 +15,8 @@ find app/views/admin/notifications -type f | xargs perl -p -i -e "s/Customer/Not
 find app/controllers/admin/notifications_controller.rb -type f | xargs perl -p -i -e "s/customer/notification/g"
 find app/controllers/admin/notifications_controller.rb -type f | xargs perl -p -i -e "s/Customer/Notification/g"
 
-find spec/systems/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/customer/notification/g"
-find spec/systems/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/Customer/Notification/g"
+find spec/requests/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/customer/notification/g"
+find spec/requests/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/Customer/Notification/g"
 ```
 
 ### sidebar
