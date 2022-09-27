@@ -7,7 +7,7 @@
 
 cp app/controllers/admin/{customers,notifications}_controller.rb
 cp -r app/views/admin/{customers,notifications}
-cp spec/systems/admin/{customers,notifications}_spec.rb
+cp spec/requests/admin/{customers,notifications}_spec.rb
 
 find app/views/admin/notifications -type f | xargs perl -p -i -e "s/customer/notification/g"
 find app/views/admin/notifications -type f | xargs perl -p -i -e "s/Customer/Notification/g"
