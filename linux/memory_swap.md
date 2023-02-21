@@ -44,3 +44,10 @@ sudo swapon /swapfile
 ```
 sudo swapon -s
 ```
+
+## 補足
+`dd` コマンド以外にも以下の形で領域を作れる。その場合はfallocateの方が早く動作するが一部swap-toolに対応できないらしい
+
+```
+sudo fallocate -l 512M /swapfile
+```
