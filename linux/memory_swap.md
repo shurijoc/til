@@ -45,6 +45,16 @@ sudo swapon /swapfile
 sudo swapon -s
 ```
 
+起動時にスワップファイルを起動する
+```
+$ sudo vi /etc/fstab
+```
+
+```
+/swapfile swap swap defaults 0 0
+```
+
+
 ## 補足
 `dd` コマンド以外にも以下の形で領域を作れる。その場合はfallocateの方が早く動作するが一部swap-toolに対応できないらしい
 
