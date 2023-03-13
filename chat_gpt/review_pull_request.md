@@ -3,7 +3,7 @@
 ChatGPTでPRレビューをする
 
 # action設定
-https://github.com/kxxt/chatgpt-action を使う
+https://github.com/cirolini/chatgpt-github-actions を使う
 
 あとはそのまま設定すればOK。
 
