@@ -11,6 +11,8 @@ github actionsの secrets は個々で設定
 
 https://github.com/$user/$project/settings/secrets
 
+GITHUB_TOKENはrepo権限だけあればOK
+
 # openai設定
 
 こちらでapi key作成と取得
