@@ -3,20 +3,30 @@
 ### view / controller
 ```
 #!/bin/bash
-# notificationsの場合
+# customersを元にnotificationsを作る場合
+FROM_D=customer
+FROM_U=Customer
+TO_D=notification
+TO_U=Notification
 
-cp app/controllers/admin/{customers,notifications}_controller.rb
-cp -r app/views/admin/{customers,notifications}
-cp spec/requests/admin/{customers,notifications}_spec.rb
+cp app/controllers/admin/{$FROM_D,$TO_D}s_controller.rb
+cp -r app/views/admin/{$FROM_D,$TO_D}s
+cp spec/requests/admin/{$FROM_D,$TO_D}s_spec.rb
 
-find app/views/admin/notifications -type f | xargs perl -p -i -e "s/customer/notification/g"
-find app/views/admin/notifications -type f | xargs perl -p -i -e "s/Customer/Notification/g"
+find app/views/admin/${TO_D}s -type f | xargs perl -p -i -e "s/$FROM_D/$TO_D/g"
+find app/views/admin/${TO_D}s -type f | xargs perl -p -i -e "s/$FROM_U/$TO_U/g"
 
-find app/controllers/admin/notifications_controller.rb -type f | xargs perl -p -i -e "s/customer/notification/g"
-find app/controllers/admin/notifications_controller.rb -type f | xargs perl -p -i -e "s/Customer/Notification/g"
+find app/controllers/admin/${TO_D}s_controller.rb -type f | xargs perl -p -i -e "s/$FROM_D/$TO_D/g"
+find app/controllers/admin/${TO_D}s_controller.rb -type f | xargs perl -p -i -e "s/$FROM_U/$TO_U/g"
 
-find spec/requests/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/customer/notification/g"
-find spec/requests/admin/notifications_spec.rb -type f | xargs perl -p -i -e "s/Customer/Notification/g"
+find spec/requests/admin/${TO_D}s_spec.rb -type f | xargs perl -p -i -e "s/$FROM_D/$TO_D/g"
+find spec/requests/admin/${TO_D}s_spec.rb -type f | xargs perl -p -i -e "s/$FROM_U/$TO_U/g"
+
+### requests/spec
+cp spec/requests/admin/${FROM_D}s_spec.rb spec/requests/admin/${TO_D}s_spec.rb
+
+find spec/requests/admin/${TO_D}s_spec.rb -type f | xargs perl -p -i -e "s/$FROM_D/$TO_D/g"
+find spec/requests/admin/${TO_D}s_spec.rb -type f | xargs perl -p -i -e "s/$FROM_U/$TO_U/g"
 ```
 
 ### sidebar
@@ -64,13 +74,4 @@ end
 
 EOS
 done
-
-```
-
-### requests/spec
-```
-cp spec/requests/api/v1/lessons_spec.rb spec/requests/api/v1/free_videos_spec.rb
-
-find spec/requests/api/v1/free_videos_spec.rb -type f | xargs perl -p -i -e "s/lesson/free_video/g"
-find spec/requests/api/v1/free_videos_spec.rb -type f | xargs perl -p -i -e "s/Lesson/FreeVideo/g"
 ```
