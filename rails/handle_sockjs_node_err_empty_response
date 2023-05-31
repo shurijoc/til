@@ -1,0 +1,12 @@
+docker x rails x vuejsで発生。
+
+GET http://localhost:3035/sockjs-node/info?t=〜 net::ERR_EMPTY_RESPONSE の対処手順
+
+どうやらwebpack-dev-serverにアクセスできないというエラーのよう。
+以下、エラーを止める手順です。
+
+dockerの設定で3035番ポートを通す。
+foremanで起動している場合、Procfileのwebpack-dev-server起動部分を下記のように書き換える
+webpack: WEBPACKER_DEV_SERVER_HOST=0.0.0.0 WEBPACKER_DEV_SERVER_PUBLIC=127.0.0.1:3035 WEBPACKER_DEV_SERVER_PORT=3035 ./bin/webpack-dev-server
+
+WEBPACKER_DEV_SERVER_PUBLICの部分はブラウザでアクセスするときのURLなので自分の環境に合わせて修正してください。
