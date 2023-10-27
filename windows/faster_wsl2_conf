@@ -1,0 +1,4 @@
+```/etc/wsl.conf
+[experimental]
+autoMemoryReclaim=true
+```
