@@ -14,15 +14,15 @@ if test -f $output_file
 end
 
 # 特定のディレクトリ内のファイルを探索
-find $directory -type f | while read -r file
+find $directory -type f | while read -d "\n" file
     # ファイル名を出力ファイルに追記
     echo "ファイル名: "(basename $file) >> $output_file
     # 絶対パスを出力ファイルに追記
     echo "絶対PATH: "$file >> $output_file
     # ファイルの中身を出力ファイルに追記
-    echo "内容 開始:" >> $output_file
+    echo "内容 開始" >> $output_file
     cat $file >> $output_file
-    echo "内容終了:" >> $output_file
+    echo "内容 終了:" >> $output_file
     echo "--------------------------------" >> $output_file
 end
 
